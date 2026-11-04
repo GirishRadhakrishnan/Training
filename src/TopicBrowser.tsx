@@ -70,7 +70,7 @@ export default function TopicBrowser({ projectHref }: TopicBrowserProps) {
   return (
     <div className="shell">
       <nav className="sidebar" aria-label="Topics">
-        <h1>React leave training</h1>
+        <h1>React training</h1>
         {days.map((day) => (
           <section key={day}>
             <h2>Day {day}</h2>

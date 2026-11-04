@@ -9,7 +9,7 @@
 // These handlers only write to the console (open DevTools > Console).
 // They cannot change what is on the page yet: that needs state, on Day 2.
 
-import type { ChangeEvent, FormEvent } from "react";
+import type { ChangeEvent, SubmitEvent } from "react";
 
 function cancel(id: number) {
   console.log("Cancel clicked for leave", id);
@@ -19,7 +19,7 @@ function handleChange(event: ChangeEvent<HTMLInputElement>) {
   console.log("Typed:", event.target.value);
 }
 
-function handleSubmit(event: FormEvent<HTMLFormElement>) {
+function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
   event.preventDefault();
   console.log("Form submitted without reloading the page");
 }
@@ -45,16 +45,6 @@ export default function EventHandling() {
         </button>
       </form>
 
-      <h3>The fn() mistake</h3>
-      <pre>
-{`onClick={cancel(1)}      // WRONG: runs while rendering, passes undefined
-onClick={() => cancel(1)} // RIGHT: runs when the user clicks`}
-      </pre>
-
-      <p className="try">
-        Try it: remove event.preventDefault() and submit the form. What happens
-        to the page? Put it back.
-      </p>
     </div>
   );
 }

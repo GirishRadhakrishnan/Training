@@ -12,12 +12,13 @@
 // state, so clicking a button in one card does not change the other card.
 
 import { useState } from "react";
-
+// Define the props
 type BalanceCardProps = {
   title: string;
   allowed: number; // prop: set by the parent, read-only
 };
 
+//Initialize and calculate state
 function BalanceCard({ title, allowed }: BalanceCardProps) {
   const [requested, setRequested] = useState(0); // state: owned by this card
   const remaining = allowed - requested;
@@ -28,9 +29,13 @@ function BalanceCard({ title, allowed }: BalanceCardProps) {
       <p>Allowed (prop): {allowed}</p>
       <p>Requested (state): {requested}</p>
       <p>Remaining: {remaining}</p>
+      {/* //updates state when clicked, but does not change the prop */}
       <button onClick={() => setRequested(requested + 1)} disabled={remaining === 0}>
         Request 1 day
       </button>
+      {/* <button onClick={() => setRequested(requested - 1)} disabled={requested === 0}>
+        Cancel 1 day
+      </button> */}
     </div>
   );
 }
@@ -40,8 +45,9 @@ export default function PropsVsState() {
     <div>
       <h2>Props vs state</h2>
       <div className="demo cols-2">
+        {/* here we are passing props to the BalanceCard component */}
         <BalanceCard title="Annual leave" allowed={18} />
-        <BalanceCard title="Casual leave" allowed={6} />
+        <BalanceCard title="Casual leave" allowed={12} />
       </div>
       <p className="try">
         Try it: click "Request 1 day" on the Casual card until it is disabled. Then check that

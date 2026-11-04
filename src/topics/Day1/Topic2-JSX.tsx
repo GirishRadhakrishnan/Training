@@ -32,7 +32,7 @@ export default function Jsx() {
 
         {/* 3. style is an object (outer braces = expression, inner = object) */}
         <p style={{ color: "#8c1d18", fontWeight: 600 }}>Styled with an object</p>
-
+        {/* <p style="color: #8c1d18; font-weight: 600">Not valid in JSX: a CSS string</p> */}
         {/* 4. Closed tags */}
         <br />
         <input type="checkbox" id="jsx-check" /> <label htmlFor="jsx-check">Self-closing input</label>
@@ -43,10 +43,6 @@ export default function Jsx() {
         with no extra wrapper element.
       </p>
 
-      <p className="try">
-        Try it: change <code>className</code> on the input to <code>class</code>{" "}
-        and read the error React shows. Then change it back.
-      </p>
     </>
   );
 }

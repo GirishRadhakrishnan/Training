@@ -55,10 +55,7 @@ export default function Styling() {
         </div>
       </div>
 
-      <p className="try">
-        Try it: change <code>used</code> to 14 and watch the bar. Why is inline
-        style the right tool here and not a CSS class?
-      </p>
+      
     </div>
   );
 }

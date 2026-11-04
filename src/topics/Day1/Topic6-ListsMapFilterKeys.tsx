@@ -37,6 +37,39 @@ function LeaveSection({ title, leaves }: { title: string; leaves: LeaveRequest[]
   );
 }
 
+// The same array can feed a different UI: here each item becomes a table row.
+// function LeaveGrid({ leaves }: { leaves: LeaveRequest[] }) {
+//   return (
+//     <section className="demo">
+//       <h3>Requests Status</h3>
+//       <table>
+//         <thead>
+//           <tr>
+//             <th>Employee</th>
+//             <th>Type</th>
+//             <th>Start</th>
+//             <th>End</th>
+//             <th>Status</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {leaves.map((leave) => (
+//             <tr key={leave.id}>
+//               <td>{leave.employee}</td>
+//               <td>{leave.type}</td>
+//               <td>{leave.startDate}</td>
+//               <td>{leave.endDate}</td>
+//               <td>
+//                 <span className={`badge ${leave.status.toLowerCase()}`}>{leave.status}</span>
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </section>
+//   );
+// }
+
 export default function ListsMapFilterKeys() {
   const pending = sampleLeaves.filter((leave) => leave.status === "Pending");
   const decided = sampleLeaves.filter((leave) => leave.status !== "Pending");
@@ -48,19 +81,7 @@ export default function ListsMapFilterKeys() {
       <LeaveSection title="Pending" leaves={pending} />
       <LeaveSection title="Decided" leaves={decided} />
       <LeaveSection title="Withdrawn" leaves={none} />
-
-      <p className="note">
-        Demo the key bugs: (1) remove <code>key=</code> from LeaveItem and open
-        the browser console to see the "unique key" warning. (2) Use{" "}
-        <code>key=&#123;index&#125;</code> in a list with inputs, type in a row,
-        then reorder or remove an item on Day 2 when state exists: the typed text
-        stays at the same position instead of following its item.
-      </p>
-
-      <p className="try">
-        Try it: add a third filter section for Rejected requests. What happens
-        when the list is empty?
-      </p>
+      {/* <LeaveGrid leaves={sampleLeaves} /> */}
     </div>
   );
 }

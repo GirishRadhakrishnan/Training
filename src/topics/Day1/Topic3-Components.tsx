@@ -9,6 +9,7 @@
 // That is the problem: a reusable component needs input. Props (Topic 4)
 // are how a parent passes data to a child.
 
+import { Component } from "react";
 import { sampleLeaves } from "../../sample/leaves";
 
 function LeaveCard() {
@@ -23,12 +24,28 @@ function LeaveCard() {
   );
 }
 
+// The older way: a class component. It extends Component and must have a
+// render() method that returns JSX. It does the same job as LeaveCard.
+// Know how to read it, but write function components in new code.
+class LeaveCardClass extends Component {
+  render() {
+    const leave = sampleLeaves[0];
+    return (
+      <div className="card">
+        <h3>{leave.employee} (class)</h3>
+        <p>
+          {leave.type}: {leave.startDate} to {leave.endDate}
+        </p>
+      </div>
+    );
+  }
+}
+
 function LeaveList() {
   return (
     <div>
       <LeaveCard />
-      <LeaveCard />
-      <LeaveCard />
+      <LeaveCardClass />
     </div>
   );
 }
@@ -39,15 +56,7 @@ export default function Components() {
       <h2>Components</h2>
       <div className="demo">
         <LeaveList />
-      </div>
-      <p className="note">
-        The three cards are identical because LeaveCard cannot receive data. We
-        need props so each card can show a different leave request.
-      </p>
-      <p className="try">
-        Try it: rename LeaveCard to leaveCard and look at the error. Why does
-        React need the capital letter?
-      </p>
+      </div> 
     </div>
   );
 }

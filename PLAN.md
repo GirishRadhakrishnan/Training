@@ -4,6 +4,7 @@ Day 1 React fundamentals (day1, 8 topics) | Day 2 State and hooks (day2, 10) | D
 ## Day 1 (90 min)
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
+| 0 | Topic0-Introduction.tsx + .module.css | - | slide deck: what/why React, library vs framework, Vite setup and command, Oxlint vs ESLint |
 | 1 | Topic1-ReactFundamentals.tsx | 8 | UI = f(data), component tree, one component with different data |
 | 2 | Topic2-JSX.tsx | 8 | {} expressions, camelCase attributes, style object, closing tags, fragments |
 | 3 | Topic3-Components.tsx | 10 | function components, composition, why props are needed |

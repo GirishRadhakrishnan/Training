@@ -5,15 +5,13 @@
 //  - Ternary: {condition ? <A /> : <B />} when you need one or the other.
 //  - &&: {condition && <A />} when you need "A or nothing".
 //
-// Pitfall: {0 && <A />} renders the number 0, because 0 is a value React can
-// print. Always make the left side a real boolean, like {n > 0 && <A />}.
 
 import type { LeaveRequest } from "../../types";
 import { sampleLeaves } from "../../sample/leaves";
 
 function LeaveRow({ leave }: { leave: LeaveRequest }) {
   // Early return: Cancelled requests are not shown.
-  if (leave.status === "Cancelled") return null;
+  if (leave.status === "Cancelled" || leave.status === "Rejected") return null;
 
   return (
     <div className="card row">
@@ -38,23 +36,6 @@ export default function ConditionalRendering() {
           <LeaveRow key={leave.id} leave={leave} />
         ))}
       </div>
-
-      <h3>The 0 pitfall</h3>
-      <div className="cols-2">
-        <div className="demo">
-          <p className="muted">{"{0 && ...}"} (wrong)</p>
-          <p>Items: [{n && <span>has items</span>}]</p>
-        </div>
-        <div className="demo">
-          <p className="muted">{"{n > 0 && ...}"} (right)</p>
-          <p>Items: [{n > 0 && <span>has items</span>}]</p>
-        </div>
-      </div>
-
-      <p className="try">
-        Try it: Meera Iyer's cancelled request is hidden. Change the early
-        return so that Rejected requests are hidden too.
-      </p>
     </div>
   );
 }

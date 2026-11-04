@@ -28,7 +28,7 @@ function LeaveCard({ leave, showEmployee = false }: LeaveCardProps) {
     </div>
   );
 }
-
+//child props
 type PanelProps = {
   title: string;
   children: ReactNode;
@@ -55,15 +55,6 @@ export default function TypedProps() {
           <LeaveCard leave={sampleLeaves[3]} showEmployee />
         </Panel>
       </div>
-      <p className="note">
-        Read-only: inside LeaveCard, writing <code>leave.reason = "x"</code> is
-        a bad idea. Props belong to the parent. Make a new value instead of
-        changing the one you were given.
-      </p>
-      <p className="try">
-        Try it: remove the <code>leave</code> prop from one LeaveCard and read
-        the TypeScript error in your editor. Then add a required prop of your own.
-      </p>
     </div>
   );
 }

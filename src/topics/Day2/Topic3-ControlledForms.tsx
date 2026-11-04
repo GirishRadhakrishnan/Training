@@ -13,7 +13,7 @@
 // start and end dates during every render, so it can never get out of date.
 
 import { useState } from "react";
-import type { ChangeEvent, FormEvent } from "react";
+import type { ChangeEvent, SubmitEvent } from "react";
 import type { NewLeave } from "../../types";
 import { LEAVE_TYPES, workingDays } from "../../lib/leave";
 
@@ -47,7 +47,7 @@ export default function ControlledForms() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: FormEvent) {
+  function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
     const found = validate(form);
     setErrors(found);
