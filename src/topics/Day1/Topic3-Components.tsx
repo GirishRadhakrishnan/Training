@@ -41,7 +41,7 @@ export default function Components() {
         <LeaveList />
       </div>
       <p className="note">
-        The three cards are identical because LeaveCard cannot receive data. We
+        The three 3 cards are identical because LeaveCard cannot receive data. We
         need props so each card can show a different leave request.
       </p>
       <p className="try">
