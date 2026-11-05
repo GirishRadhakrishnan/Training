@@ -39,7 +39,7 @@ export default function Jsx() {
       </div>
 
       <p className="note">
-        This component returns a fragment, so the h2 and the div sit side by side
+        This components returns a fragment, so the h2 and the div sit side by side
         with no extra wrapper element.
       </p>
 
