@@ -15,15 +15,17 @@ import { sampleLeaves } from "../../sample/leaves";
 type LeaveCardProps = {
   leave: LeaveRequest;
   showEmployee?: boolean;
+  status:string;//added a new string prop
 };
 
-function LeaveCard({ leave, showEmployee = false }: LeaveCardProps) {
+function LeaveCard({ leave, showEmployee = false, status }: LeaveCardProps) {
   return (
     <div className="card">
       {showEmployee && <h3>{leave.employee}</h3>}
       <p>
         {leave.type}: {leave.startDate} to {leave.endDate}
       </p>
+      <p><span className="muted">{status}</span></p>
       <p className="muted">{leave.reason}</p>
     </div>
   );
@@ -49,10 +51,10 @@ export default function TypedProps() {
       <h2>Typed props</h2>
       <div className="cols-2">
         <Panel title="Without employee name">
-          <LeaveCard leave={sampleLeaves[0]} />
+          <LeaveCard leave={sampleLeaves[0]} status="Pending" />
         </Panel>
         <Panel title="With employee name">
-          <LeaveCard leave={sampleLeaves[3]} showEmployee />
+          <LeaveCard leave={sampleLeaves[3]} showEmployee status="Approved" />
         </Panel>
       </div>
       <p className="note">

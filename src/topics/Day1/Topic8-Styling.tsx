@@ -11,7 +11,7 @@ import styles from "./Topic8-Styling.module.css";
 import { sampleLeaves } from "../../sample/leaves";
 
 export default function Styling() {
-  const used = 7; // days of annual leave used (calculated in real apps)
+  const used = 14; // days of annual leave used (calculated in real apps)
   const total = 18;
   const percent = Math.round((used / total) * 100);
 
@@ -62,3 +62,4 @@ export default function Styling() {
     </div>
   );
 }
+//Inline style is the right tool because the value is dynamic and calculated at runtime.

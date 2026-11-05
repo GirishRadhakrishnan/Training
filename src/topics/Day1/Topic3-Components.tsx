@@ -51,3 +51,5 @@ export default function Components() {
     </div>
   );
 }
+
+//component must start with capital letter.
