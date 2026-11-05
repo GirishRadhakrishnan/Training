@@ -40,6 +40,7 @@ function LeaveSection({ title, leaves }: { title: string; leaves: LeaveRequest[]
 export default function ListsMapFilterKeys() {
   const pending = sampleLeaves.filter((leave) => leave.status === "Pending");
   const decided = sampleLeaves.filter((leave) => leave.status !== "Pending");
+  const sampleReject = sampleLeaves.filter((leave) => leave.status === "Rejected");
   const none: LeaveRequest[] = [];
 
   return (
@@ -47,6 +48,7 @@ export default function ListsMapFilterKeys() {
       <h2>Lists, map, filter and keys</h2>
       <LeaveSection title="Pending" leaves={pending} />
       <LeaveSection title="Decided" leaves={decided} />
+      <LeaveSection title="Rejected" leaves={sampleReject} />
       <LeaveSection title="Withdrawn" leaves={none} />
 
       <p className="note">

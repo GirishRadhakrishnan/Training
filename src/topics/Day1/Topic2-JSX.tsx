@@ -50,3 +50,6 @@ export default function Jsx() {
     </>
   );
 }
+// it will show this error :Type '{ id: string; class: string; defaultValue: string; }' is not assignable to type 'DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>'.
+//   Property 'class' does not exist on type 'DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>'. Did you mean 'className'?ts(2322)
+// (property) class: string

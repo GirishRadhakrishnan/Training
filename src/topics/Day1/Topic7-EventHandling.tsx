@@ -20,7 +20,7 @@ function handleChange(event: ChangeEvent<HTMLInputElement>) {
 }
 
 function handleSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
+  event.preventDefault();//if we remove this ,the page will reload
   console.log("Form submitted without reloading the page");
 }
 

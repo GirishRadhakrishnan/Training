@@ -38,6 +38,7 @@ export default function ReactFundamentals() {
         <PendingCount employee="Asha Rao" />
         <PendingCount employee="Ravi Menon" />
         <PendingCount employee="Meera Iyer" />
+        <PendingCount employee="Nobody" />
       </div>
       <p className="try">
         Try it: add a fourth PendingCount with employee="Nobody" and see what it
