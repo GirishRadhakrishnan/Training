@@ -7,18 +7,18 @@
 //  - Inline style: only for values known at runtime, like a width in percent.
 // Build class names with a template string for conditional styling.
 
-import styles from "./Topic8-Styling.module.css";
+import styles from "./Topic8-Styling.module.css"; //importing css
 import { sampleLeaves } from "../../sample/leaves";
 
 export default function Styling() {
-  const used = 7; // days of annual leave used (calculated in real apps)
+  const used = 16; // days of annual leave used (calculated in real apps)
   const total = 18;
   const percent = Math.round((used / total) * 100);
 
   return (
     <div>
       <h2>Styling</h2>
-
+{/* //component specific styling */}
       <div className={styles.panel}>
         <h3 className={styles.title}>CSS Module panel</h3>
         <p>This panel and its title use classes from Topic8-Styling.module.css.</p>

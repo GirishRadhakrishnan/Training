@@ -1,0 +1,68 @@
+.deck {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.counter {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.slide {
+  min-height: 24rem;
+  padding: 0.5rem 0 1rem;
+  font-size: 1.15rem;
+}
+
+.slide h2 {
+  font-size: 2rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.lead {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.points {
+  padding-left: 1.25rem;
+}
+
+.points li {
+  margin-bottom: 0.6rem;
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+}
+
+.panel pre {
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .compare {
+    grid-template-columns: 1fr;
+  }
+}

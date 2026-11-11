@@ -19,10 +19,13 @@ Day 1 task: static "My leaves" page from src/sample/leaves.ts with status badges
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
 | - | Recap of Day 1 submissions | 5 | review trainee "My leaves" pages |
+| 0 | Topic0-HooksIntro.tsx + .module.css | - | slide deck: why state exists, what hooks are, before hooks (classes), React 16.8, advantages, rules, common hooks table, useState vs useReducer |
 | 1 | Topic1-PropsVsState.tsx | 5 | read-only props vs own state, two independent cards |
 | 2 | Topic2-UseState.tsx | 12 | snapshot problem, updater form, object spread, array add/remove, React Compiler note |
 | 3 | Topic3-ControlledForms.tsx | 12 | one change handler, validation on submit, aria-invalid, derived working days |
 | 4 | Topic4-LiftingStateUp.tsx | 8 | parent owns filter, children read it, derived visible list |
+| 4b | Topic4-LiftingStateFlowDiagram.tsx | - | diagram: props flow down, function props send changes up |
+| 4 | Topic4-LiftingStateFlowDiagram.tsx | - | diagram: props flow down, function props send changes up |
 | 5 | Topic5-RulesOfHooks.tsx | 4 | hooks before early return, broken examples in comments, runtime error |
 | 6 | Topic6-UseEffect.tsx | 14 | document title, timer with cleanup, no effect needed, StrictMode double run |
 | 7 | Topic7-UseRef.tsx | 6 | DOM ref and focus, ref as a prop (React 19), timer id in a ref |

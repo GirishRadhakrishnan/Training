@@ -95,11 +95,6 @@ export default function LiftingStateUp() {
         <Summary filter={filter} count={visible.length} />
         <LeaveTable leaves={visible} filter={filter} />
       </div>
-      <p className="try">
-        Try it: add a fourth child that shows only the number of Approved requests. Does it
-        need its own state? Where would you put a "search text" that both the table and the
-        summary use?
-      </p>
     </div>
   );
 }

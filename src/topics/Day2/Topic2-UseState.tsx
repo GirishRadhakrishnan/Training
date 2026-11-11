@@ -33,14 +33,14 @@ function Counter() {
         </button>
         <button
           onClick={() => {
-            setCount((c) => c + 1);
-            setCount((c) => c + 1);
+            setCount((c) => c + 1);0, 1
+            setCount((c) => c + 1);1, 2
             setCount((c) => c + 1);
           }}
         >
           +3 (updater form)
         </button>
-        <button onClick={() => setCount((c) => c + 1)}>+1</button>
+        <button onClick={() =>  setCount(count + 1)}>+1</button>
         <button onClick={() => setCount(0)}>Reset</button>
       </div>
     </div>
@@ -110,18 +110,16 @@ export default function UseState() {
       <div className="demo">
         <Counter />
       </div>
-      <h3>b) Object state: copy with spread</h3>
+      {/* //as we are covering it in topic 4 */}
+      {/* <h3>b) Object state: copy with spread</h3>
       <div className="demo">
         <ObjectState />
-      </div>
+      </div> */}
       <h3>c) Array state: add and remove</h3>
       <div className="demo">
         <ArrayState />
       </div>
-      <p className="try">
-        Try it: click "+3 (wrong way)" and "+3 (updater form)" from 0 and compare. Then in (c),
-        add three days, remove "Day 3" and add again. Why does the new label not reuse the number?
-      </p>
+      
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { sampleLeaves } from "../../sample/leaves";
 
 function LeaveRow({ leave }: { leave: LeaveRequest }) {
   // Early return: Cancelled requests are not shown.
-  if (leave.status === "Cancelled" || leave.status === "Rejected") return null;
+  if (leave.status === "Cancelled") return null;
 
   return (
     <div className="card row">

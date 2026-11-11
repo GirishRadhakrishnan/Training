@@ -12,7 +12,7 @@
 // state, so clicking a button in one card does not change the other card.
 
 import { useState } from "react";
-// Define the props
+// 1. Define the props type
 type BalanceCardProps = {
   title: string;
   allowed: number; // prop: set by the parent, read-only
@@ -39,6 +39,19 @@ function BalanceCard({ title, allowed }: BalanceCardProps) {
     </div>
   );
 }
+// class Counter extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { count: 0 };
+//     this.increment = this.increment.bind(this);   // easy to forget
+//   }
+//   componentDidMount() { /* fetch data, add listeners */ }
+//   componentDidUpdate() { /* react to changes */ }
+//   componentWillUnmount() { /* clean up */ }
+//   increment() { this.setState({ count: this.state.count + 1 }); }
+//   render() { return <button onClick={this.increment}>{this.state.count}</button>; }
+// }
+
 
 export default function PropsVsState() {
   return (
@@ -46,8 +59,8 @@ export default function PropsVsState() {
       <h2>Props vs state</h2>
       <div className="demo cols-2">
         {/* here we are passing props to the BalanceCard component */}
-        <BalanceCard title="Annual leave" allowed={18} />
-        <BalanceCard title="Casual leave" allowed={12} />
+        <BalanceCard title="Annual leave" allowed={15} />
+        <BalanceCard title="Casual leave" allowed={15} />
       </div>
       <p className="try">
         Try it: click "Request 1 day" on the Casual card until it is disabled. Then check that

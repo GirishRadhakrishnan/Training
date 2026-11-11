@@ -13,13 +13,14 @@ import type { ChangeEvent, SubmitEvent } from "react";
 
 function cancel(id: number) {
   console.log("Cancel clicked for leave", id);
+  console.log(id)
 }
 
 function handleChange(event: ChangeEvent<HTMLInputElement>) {
   console.log("Typed:", event.target.value);
 }
 
-function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
+function handleSubmit( event: SubmitEvent<HTMLFormElement>) {
   event.preventDefault();
   console.log("Form submitted without reloading the page");
 }
@@ -31,8 +32,9 @@ export default function EventHandling() {
       <p className="note">Handlers log to the console. Open DevTools to see them.</p>
 
       <div className="demo row">
-        <button onClick={() => cancel(1)}>Cancel leave 1</button>
-        <button onClick={() => cancel(2)}>Cancel leave 2</button>
+        <button onClick={() => cancel(1)}>Cancel</button>
+        <button onClick={() => cancel(2)}>Cancel leave 1</button>
+        <button onClick={() => cancel(3)}>Cancel leave 2</button>
       </div>
 
       <form className="demo form" onSubmit={handleSubmit}>

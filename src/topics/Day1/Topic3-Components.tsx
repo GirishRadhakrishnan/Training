@@ -45,6 +45,8 @@ function LeaveList() {
   return (
     <div>
       <LeaveCard />
+      <LeaveCard />
+      <LeaveCard />
       <LeaveCardClass />
     </div>
   );
