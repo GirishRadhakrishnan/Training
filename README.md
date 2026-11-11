@@ -50,3 +50,17 @@ Requires Node 22.22 or newer.
 10. Class components (awareness)
 
 **Day 2 task:** add debounced search, status and type filters (useReducer), working days per request, and a "No requests match" empty state to the My leaves page.
+
+## Day 3 topics
+
+1. Why TanStack Query
+2. useQuery
+3. Loading, error and empty states
+4. Create, update and delete
+5. Optimistic updates
+6. Router basics
+7. Nested routes and params
+
+Day 3 uses a mock REST API under `/api`, served in memory by the Vite dev server (`vite.config.ts`). Data resets when you restart `npm run dev`. Add `?delay=2000`, `?fail=1` or `?empty=1` to a request to simulate slow, failing or empty responses.
+
+**Day 3 task:** load "My leaves" from the API with loading, error and empty states, add Cancel with `useMutation`, and a `/leaves/:id` detail page.

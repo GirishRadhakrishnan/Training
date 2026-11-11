@@ -270,6 +270,28 @@ input[aria-invalid="true"] {
   color: var(--rejected-fg);
 }
 
+/* Loading placeholder (Day 3) */
+.skeleton {
+  height: 3.2rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #e6e8ee 25%, #f2f3f7 50%, #e6e8ee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
 /* Tables */
 table {
   width: 100%;

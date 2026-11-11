@@ -35,8 +35,21 @@ Day 1 task: static "My leaves" page from src/sample/leaves.ts with status badges
 | - | Task briefing | 5 | |
 Total: 90 min. Helpers used by the topics: src/lib/leave.ts (workingDays, daysByStatus, datesOverlap, formatRange, ALLOWANCE).
 Day 2 task: add debounced search, status and type filters (useReducer), working days per request, and a "No requests match" empty state to the My leaves page.
+## Day 3 (90 min)
+| # | File | Min | Demonstrates |
+|---|------|-----|--------------|
+| - | Recap of Day 2 submissions | 5 | review trainee filters and search |
+| 1 | Topic1-WhyTanStackQuery.tsx | 12 | REST primer, manual fetch in useEffect (AbortController) vs useQuery |
+| 2 | Topic2-UseQuery.tsx | 12 | queryKey with variables, data/isPending/isFetching/isError, staleTime, refetch on focus |
+| 3 | Topic3-LoadingErrorEmpty.tsx | 10 | skeleton, specific error with Retry, empty state, isPending vs isFetching, ?delay/?fail/?empty |
+| 4 | Topic4-CreateUpdateDelete.tsx | 14 | useMutation for POST/PATCH/DELETE, controlled form reused for Edit, requests table with Edit/Delete, invalidate in onSettled |
+| 5 | Topic5-OptimisticUpdates.tsx | 10 | onMutate snapshot, onError rollback, onSettled; forced PATCH failure |
+| 6 | Topic6-RouterBasics.tsx | 10 | Routes, Route, Link, NavLink, useNavigate, 404 route, MemoryRouter inside topics |
+| 7 | Topic7-NestedRoutesAndParams.tsx | 10 | layout route + Outlet, /leaves/:id, useParams (string to number), detail with 404 |
+| - | Task briefing | 7 | |
+Total: 90 min. Mock REST API: vite.config.ts plugin (in memory, resets on restart) + typed helpers in src/api/leaves.ts. QueryClientProvider is in src/main.tsx.
+Day 3 task: "My leaves" loaded from the API with loading, error and empty states, Cancel via useMutation, and a /leaves/:id detail page.
 ## Later days (expand when built)
-Day 3: WhyTanStackQuery, UseQuery, LoadingErrorEmpty, CreateUpdateDelete, OptimisticUpdates, RouterBasics, NestedRoutesAndParams. Task: "My leaves" from the API with loading/error/empty states, Cancel via useMutation, /leaves/:id.
 Day 4: StateMap, PropDrilling, ContextAPI, Zustand, StoreAndServerState, ReduxToolkitComparison, ErrorBoundaries, ProjectTour. Task: manager-only Flagged list in Zustand (ids only) + 3 lines on where each state lives.
 ## State decision
 Local UI: useState/useReducer (Day 2) | Server data: TanStack Query (Day 3) | URL: Router (Day 3) | Shared client: Zustand, Context for small values (Day 4) | Existing/large Redux apps: Redux Toolkit (comparison only).
@@ -44,4 +57,4 @@ Local UI: useState/useReducer (Day 2) | Server data: TanStack Query (Day 3) | UR
 Employee Leave Tracker in src/project/. "View as" Employee (Asha Rao) / Manager, no login. Pages: My leaves, Apply, Detail, Team requests (manager), Flagged (manager), 404.
 Annual 18 days, Sick 10, Casual 6, Unpaid unlimited; weekends excluded. Optimistic approve/reject/cancel with rollback.
 ## Checklist
-[x] day1 built and committed [x] day2 built and committed [ ] day3 [ ] day4 [ ] ESLint on day2 [ ] solution branches [ ] versions pinned, course tag
+[x] day1 built and committed [x] day2 built and committed [x] day3 built and committed [ ] day4 [ ] ESLint on day2 [ ] solution branches [ ] versions pinned, course tag

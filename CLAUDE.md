@@ -26,5 +26,8 @@ Every data screen has loading, error (with Retry) and empty states in specific l
 Balances, counts and working days are calculated, never stored. TypeScript strict, prefer `type`, sentence-case UI text, plain visual design.
 ## Definition of done
 npm run build passes; change rebased onto later branches; topic follows the rules; PLAN.md updated; no node_modules/dist/secrets committed.
+## Day 3 additions
+Mock REST API is a Vite plugin in vite.config.ts (in memory, /api/leaves, ?delay ?fail ?empty); fetch helpers in src/api/leaves.ts check response.ok and throw ApiError. QueryClientProvider is in src/main.tsx (retry: false).
+Topic demos use MemoryRouter, never BrowserRouter: TopicBrowser owns the URL hash.
 ## Known gaps
 ESLint is added on day2. Dependencies use caret ranges; pin exact versions after the first full successful build.
