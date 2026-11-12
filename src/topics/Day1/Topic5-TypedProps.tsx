@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 4: Typed props
+// DAY 1 · TOPIC 5: Typed props
 //
 // Props are the inputs of a component. In TypeScript, describe them with a type.
 //  - leave: LeaveRequest is required. Forgetting it is a compile error.

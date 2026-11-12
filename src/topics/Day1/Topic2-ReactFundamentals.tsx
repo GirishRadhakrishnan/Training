@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 1: React fundamentals
+// DAY 1 · TOPIC 2: React fundamentals
 //
 // React builds the screen from data: UI = f(data).
 // You write a function (a component) that takes data and returns what the

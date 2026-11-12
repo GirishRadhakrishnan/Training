@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 7: Event handling
+// DAY 1 · TOPIC 8: Event handling
 //
 // Pass a function to an event prop: onClick, onChange, onSubmit.
 //  - Pass the function itself: onClick={handleClick}
