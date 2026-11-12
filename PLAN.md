@@ -1,20 +1,19 @@
 # PLAN.md
 ## Schedule (4 days x 90 min; ~70 min teaching, ~20 min practice; run back-to-back)
-Day 1 React fundamentals (day1, 9 topics) | Day 2 State and hooks (day2, 10) | Day 3 Server state, CRUD, routing (day3, 7) | Day 4 Shared state + final project (day4, 8 + project)
+Day 1 React fundamentals (day1, 8 topics) | Day 2 State and hooks (day2, 10) | Day 3 Server state, CRUD, routing (day3, 7) | Day 4 Shared state + final project (day4, 8 + project)
 ## Day 1 (90 min)
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
 | 0 | Topic0-Introduction.tsx + .module.css | - | slide deck: what/why React, library vs framework, Vite setup and command, Oxlint vs ESLint |
-| 1 | Topic1-StateAndHooks.tsx | 8 | preview: props vs state, hook = "use" function, state loop diagram, add-to-cart with useState |
-| 2 | Topic2-ReactFundamentals.tsx | 8 | UI = f(data), component tree, one component with different data |
-| 3 | Topic3-JSX.tsx | 8 | {} expressions, camelCase attributes, style object, closing tags, fragments |
-| 4 | Topic4-Components.tsx | 10 | function components, composition, why props are needed |
-| 5 | Topic5-TypedProps.tsx | 12 | typed props, optional/default values, children, read-only props |
-| 6 | Topic6-ConditionalRendering.tsx | 8 | ternary, &&, early return, the `0 &&` pitfall |
-| 7 | Topic7-ListsMapFilterKeys.tsx | 14 | map, filter, key, empty list, live key bug |
-| 8 | Topic8-EventHandling.tsx | 8 | onClick/onChange/onSubmit, arrow wrapper, preventDefault, the fn() mistake |
-| 9 | Topic9-Styling.tsx + .module.css | 6 | CSS Modules, global CSS, conditional classes, inline style for runtime values |
-Lab and task briefing: 8 min.
+| 1 | Topic1-ReactFundamentals.tsx | 8 | UI = f(data), component tree, one component with different data |
+| 2 | Topic2-JSX.tsx | 8 | {} expressions, camelCase attributes, style object, closing tags, fragments |
+| 3 | Topic3-Components.tsx | 10 | function components, composition, why props are needed |
+| 4 | Topic4-TypedProps.tsx | 12 | typed props, optional/default values, children, read-only props |
+| 5 | Topic5-ConditionalRendering.tsx | 8 | ternary, &&, early return, the `0 &&` pitfall |
+| 6 | Topic6-ListsMapFilterKeys.tsx | 14 | map, filter, key, empty list, live key bug |
+| 7 | Topic7-EventHandling.tsx | 8 | onClick/onChange/onSubmit, arrow wrapper, preventDefault, the fn() mistake |
+| 8 | Topic8-Styling.tsx + .module.css | 6 | CSS Modules, global CSS, conditional classes, inline style for runtime values |
+Lab and task briefing: 16 min.
 Day 1 task: static "My leaves" page from src/sample/leaves.ts with status badges, a Cancel button on pending items only, Pending and History sections.
 ## Day 2 (90 min)
 | # | File | Min | Demonstrates |

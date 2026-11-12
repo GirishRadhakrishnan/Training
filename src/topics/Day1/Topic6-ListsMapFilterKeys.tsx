@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 7: Lists, map, filter and keys
+// DAY 1 · TOPIC 6: Lists, map, filter and keys
 //
 // To show a list, turn an array of data into an array of JSX with map().
 // To show only some items, filter() first, then map().

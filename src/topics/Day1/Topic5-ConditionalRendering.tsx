@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 6: Conditional rendering
+// DAY 1 · TOPIC 5: Conditional rendering
 //
 // Show different UI depending on data, using plain JavaScript:
 //  - Early return: return null to render nothing at all.

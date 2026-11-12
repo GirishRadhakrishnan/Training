@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 3: JSX
+// DAY 1 · TOPIC 2: JSX
 //
 // JSX looks like HTML but it is JavaScript. Vite turns it into function calls.
 // Rules to remember:

@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import type { ComponentType } from "react";
 
 type Topic = {
-  key: string; // e.g. "Day1/Topic2-ReactFundamentals"
+  key: string; // e.g. "Day1/Topic1-ReactFundamentals"
   day: number;
   number: number;
   title: string;

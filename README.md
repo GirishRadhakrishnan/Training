@@ -8,8 +8,8 @@ See `PLAN.md` for the schedule, `CLAUDE.md` for project rules and `GIT.md` for t
 
 | Branch | Content |
 |--------|---------|
-| day1 | React fundamentals (9 topics) |
-| day2 | day1 + state and hooks (10 topics, 19 in total) |
+| day1 | React fundamentals (8 topics) |
+| day2 | day1 + state and hooks (10 topics, 18 in total) |
 | day3 | day2 + server state, CRUD, routing (7 topics) |
 | day4 | day3 + shared state (8 topics) + final project in `src/project/` |
 
@@ -25,15 +25,14 @@ Requires Node 22.22 or newer.
 
 ## Day 1 topics
 
-1. State and hooks (preview)
-2. React fundamentals
-3. JSX
-4. Components
-5. Typed props
-6. Conditional rendering
-7. Lists, map, filter and keys
-8. Event handling
-9. Styling
+1. React fundamentals
+2. JSX
+3. Components
+4. Typed props
+5. Conditional rendering
+6. Lists, map, filter and keys
+7. Event handling
+8. Styling
 
 **Day 1 task:** build a static "My leaves" page from `src/sample/leaves.ts` with status badges, a Cancel button on pending items only, and Pending and History sections.
 

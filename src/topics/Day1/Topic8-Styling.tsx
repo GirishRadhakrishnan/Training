@@ -1,13 +1,13 @@
-// DAY 1 · TOPIC 9: Styling
+// DAY 1 · TOPIC 8: Styling
 //
 // Three tools, each for one job:
-//  - CSS Modules (Topic9-Styling.module.css): class names are local to this file,
+//  - CSS Modules (Topic8-Styling.module.css): class names are local to this file,
 //    so .panel here never clashes with .panel elsewhere.
 //  - Global CSS (styles.css): shared classes like .badge used everywhere.
 //  - Inline style: only for values known at runtime, like a width in percent.
 // Build class names with a template string for conditional styling.
 
-import styles from "./Topic9-Styling.module.css"; //importing css
+import styles from "./Topic8-Styling.module.css"; //importing css
 import { sampleLeaves } from "../../sample/leaves";
 
 export default function Styling() {
@@ -21,7 +21,7 @@ export default function Styling() {
 {/* //component specific styling */}
       <div className={styles.panel}>
         <h3 className={styles.title}>CSS Module panel</h3>
-        <p>This panel and its title use classes from Topic9-Styling.module.css.</p>
+        <p>This panel and its title use classes from Topic8-Styling.module.css.</p>
       </div>
 
       <div className="demo">

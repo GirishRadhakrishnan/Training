@@ -1,4 +1,4 @@
-// DAY 1 · TOPIC 4: Components
+// DAY 1 · TOPIC 3: Components
 //
 // A component is a function that returns JSX. Rules:
 //  - The name starts with a capital letter (LeaveCard, not leaveCard).
