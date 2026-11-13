@@ -63,7 +63,7 @@ function ObjectState() {
           <option>Annual</option>
           <option>Sick</option>
           <option>Casual</option>
-          <option>Unpaid</option>
+          <option>Flexi</option>
         </select>
         <input
           aria-label="Reason"

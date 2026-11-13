@@ -1,4 +1,4 @@
-// DAY 3 · TOPIC 7: Nested routes and params
+// DAY 3 · TOPIC 11: Nested routes and params
 //
 // A layout route has no path of its own. It draws shared UI (heading, nav) and an
 // <Outlet /> where the matching child route appears.

@@ -58,7 +58,8 @@ pre {
 .shell {
   display: grid;
   grid-template-columns: 280px 1fr;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -99,7 +100,12 @@ pre {
 
 .content {
   padding: 1.5rem 2rem;
-  max-width: 960px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.content > * {
+  max-width: 928px;
 }
 
 .file-label {
@@ -259,6 +265,70 @@ input[aria-invalid="true"] {
   margin: 0;
 }
 
+/* Apply-for-leave form (Day 3, Topic 8): compact */
+.apply-form {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 560px;
+}
+
+.field {
+  display: grid;
+  gap: 0.2rem;
+  align-content: start;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.3rem 0.5rem;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.summary {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.summary.warn {
+  color: var(--pending-fg);
+}
+
+.field select[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+@media (max-width: 560px) {
+  .dates {
+    grid-template-columns: 1fr;
+  }
+}
+
+.message.success {
+  background: var(--approved-bg);
+  color: var(--approved-fg);
+}
+
 .message {
   padding: 0.6rem 0.9rem;
   border-radius: 6px;
@@ -313,6 +383,8 @@ th {
 
 @media (max-width: 760px) {
   .shell {
+    height: auto;
+    overflow: visible;
     grid-template-columns: 1fr;
   }
 
@@ -327,5 +399,139 @@ th {
 
   .cols-2 {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Leaves dashboard (Day 3, Topic 8) */
+.lv-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.lv-header h2 {
+  margin: 0;
+}
+
+.lv-range {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.875rem;
+}
+
+.lv-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "balance tracker"
+    "apply tracker"
+    "history history";
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.lv-balance { grid-area: balance; }
+.lv-apply { grid-area: apply; }
+.lv-tracker { grid-area: tracker; }
+.lv-history { grid-area: history; }
+
+.lv-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  min-width: 0;
+}
+
+.lv-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+}
+
+.lv-card .apply-form {
+  max-width: none;
+}
+
+.lv-balance-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.lv-stat {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.6rem;
+  font-size: 0.875rem;
+}
+
+.lv-stat p {
+  margin: 0.15rem 0 0;
+}
+
+.lv-stat b {
+  font-size: 1.5rem;
+}
+
+.lv-tracker-title {
+  margin: 0;
+}
+
+.lv-donut {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  margin: 0.75rem auto;
+}
+
+.lv-donut-track,
+.lv-donut-arc {
+  fill: none;
+  stroke-width: 18;
+}
+
+.lv-donut-track {
+  stroke: #e6eefb;
+}
+
+.lv-donut-arc {
+  stroke: var(--accent);
+}
+
+.lv-donut-text {
+  font-size: 15px;
+  font-weight: 600;
+  fill: var(--text);
+  dominant-baseline: middle;
+}
+
+.lv-center {
+  text-align: center;
+}
+
+.lv-history-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.lv-history-head h3 {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .lv-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "balance" "apply" "tracker" "history";
+  }
+
+  .lv-balance-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

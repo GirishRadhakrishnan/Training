@@ -1,4 +1,4 @@
-// DAY 3 · TOPIC 6: Router basics
+// DAY 3 · TOPIC 10: Router basics
 //
 // React Router maps the URL to components. In declarative mode you write:
 //   <Routes> holds <Route path="/leaves" element={<Leaves />} /> entries.
@@ -8,7 +8,7 @@
 //   path="*" matches everything else: that is your 404 page.
 // Import everything from "react-router" (not react-router-dom).
 //
-// This training app already uses the URL hash (#Day3/Topic6-...) to pick topics.
+// This training app already uses the URL hash (#Day3/Topic10-...) to pick topics.
 // A normal browser router would fight over the same URL. So the demos use
 // MemoryRouter, which keeps its "URL" in memory. In a real app you would use
 // BrowserRouter, or createBrowserRouter in data mode.

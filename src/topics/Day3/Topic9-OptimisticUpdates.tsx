@@ -1,4 +1,4 @@
-// DAY 3 · TOPIC 5: Optimistic updates
+// DAY 3 · TOPIC 9: Optimistic updates
 //
 // Optimistic = update the screen first, assume the server will agree, and undo the
 // change if it does not. The UI feels instant. Three callbacks do the work:

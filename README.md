@@ -10,7 +10,7 @@ See `PLAN.md` for the schedule, `CLAUDE.md` for project rules and `GIT.md` for t
 |--------|---------|
 | day1 | React fundamentals (8 topics) |
 | day2 | day1 + state and hooks (10 topics, 18 in total) |
-| day3 | day2 + server state, CRUD, routing (7 topics) |
+| day3 | day2 + server state, CRUD, routing (11 topics) |
 | day4 | day3 + shared state (8 topics) + final project in `src/project/` |
 
 ## Run
@@ -53,13 +53,17 @@ Requires Node 22.22 or newer.
 
 ## Day 3 topics
 
-1. Why TanStack Query
-2. useQuery
-3. Loading, error and empty states
-4. Create, update and delete
-5. Optimistic updates
-6. Router basics
-7. Nested routes and params
+1. Recap: state and hooks
+2. Client, server, API and database
+3. APIs and HTTP methods
+4. Calling an API with fetch
+5. Why TanStack Query
+6. useQuery
+7. Loading, error and empty states
+8. Create, update and delete
+9. Optimistic updates
+10. Router basics
+11. Nested routes and params
 
 Day 3 uses a mock REST API under `/api`, served in memory by the Vite dev server (`vite.config.ts`). Data resets when you restart `npm run dev`. Add `?delay=2000`, `?fail=1` or `?empty=1` to a request to simulate slow, failing or empty responses.
 

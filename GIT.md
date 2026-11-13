@@ -1,5 +1,5 @@
 # GIT.md
-Four cumulative linear branches: day1 -> day2 -> day3 -> day4 (8, +10, +7, +8 topics + project). Differing files per branch: package.json,
+Four cumulative linear branches: day1 -> day2 -> day3 -> day4 (8, +10, +11, +8 topics + project). Differing files per branch: package.json,
 vite.config.ts, src/main.tsx, src/App.tsx, README.md.
 Trainer: git switch dayN; npm install; npm run dev. Trainees work on personal branches (git switch -c <name>/day1-task), never on dayN.
 Changing content: edit on the EARLIEST branch the file belongs to, run npm run build, commit, then

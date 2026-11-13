@@ -17,7 +17,7 @@ function LeaveRow({ leave }: { leave: LeaveRequest }) {
     <div className="card row">
       <strong>{leave.employee}</strong>
       {/* Ternary: one of two things */}
-      {leave.type === "Unpaid" ? <span className="muted">Unpaid</span> : <span>Paid</span>}
+      {leave.type === "Flexi" ? <span className="muted">Flexi</span> : <span>Paid</span>}
       <span className={`badge ${leave.status.toLowerCase()}`}>{leave.status}</span>
       {/* &&: a thing or nothing */}
       {leave.status === "Pending" && <button className="danger">Cancel</button>}

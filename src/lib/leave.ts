@@ -1,6 +1,6 @@
 import type { LeaveRequest, LeaveStatus, LeaveType } from "../types";
 
-export const LEAVE_TYPES: LeaveType[] = ["Annual", "Sick", "Casual", "Unpaid"];
+export const LEAVE_TYPES: LeaveType[] = ["Annual", "Sick", "Casual", "Flexi"];
 
 export const LEAVE_STATUSES: LeaveStatus[] = ["Pending", "Approved", "Rejected", "Cancelled"];
 
@@ -9,7 +9,7 @@ export const ALLOWANCE: Record<LeaveType, number | null> = {
   Annual: 18,
   Sick: 10,
   Casual: 6,
-  Unpaid: null,
+  Flexi: null,
 };
 
 // "YYYY-MM-DD" -> local midnight, so the date never shifts with the time zone

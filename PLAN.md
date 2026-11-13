@@ -1,6 +1,6 @@
 # PLAN.md
 ## Schedule (4 days x 90 min; ~70 min teaching, ~20 min practice; run back-to-back)
-Day 1 React fundamentals (day1, 8 topics) | Day 2 State and hooks (day2, 10) | Day 3 Server state, CRUD, routing (day3, 7) | Day 4 Shared state + final project (day4, 8 + project)
+Day 1 React fundamentals (day1, 8 topics) | Day 2 State and hooks (day2, 10) | Day 3 Server state, CRUD, routing (day3, 11) | Day 4 Shared state + final project (day4, 8 + project)
 ## Day 1 (90 min)
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
@@ -38,15 +38,19 @@ Day 2 task: add debounced search, status and type filters (useReducer), working 
 ## Day 3 (90 min)
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
-| - | Recap of Day 2 submissions | 5 | review trainee filters and search |
-| 1 | Topic1-WhyTanStackQuery.tsx | 12 | REST primer, manual fetch in useEffect (AbortController) vs useQuery |
-| 2 | Topic2-UseQuery.tsx | 12 | queryKey with variables, data/isPending/isFetching/isError, staleTime, refetch on focus |
-| 3 | Topic3-LoadingErrorEmpty.tsx | 10 | skeleton, specific error with Retry, empty state, isPending vs isFetching, ?delay/?fail/?empty |
-| 4 | Topic4-CreateUpdateDelete.tsx | 14 | useMutation for POST/PATCH/DELETE, controlled form reused for Edit, requests table with Edit/Delete, invalidate in onSettled |
-| 5 | Topic5-OptimisticUpdates.tsx | 10 | onMutate snapshot, onError rollback, onSettled; forced PATCH failure |
-| 6 | Topic6-RouterBasics.tsx | 10 | Routes, Route, Link, NavLink, useNavigate, 404 route, MemoryRouter inside topics |
-| 7 | Topic7-NestedRoutesAndParams.tsx | 10 | layout route + Outlet, /leaves/:id, useParams (string to number), detail with 404 |
-| - | Task briefing | 7 | |
+| - | Recap of Day 2 submissions | 2 | review trainee filters and search |
+| 1 | Topic1-RecapStateAndHooks.tsx | 4 | recap of Day 2: state loop diagram, useState, hook rules, add-to-cart; server data will not live in useState |
+| 2 | Topic2-ClientServerApiDatabase.tsx | 6 | diagram: React client, HTTP request, backend API, database, rows back as JSON; second diagram: shopping app, API, business logic, database |
+| 3 | Topic3-ApisAndHttpMethods.tsx | 4 | what an API is (restaurant analogy), GET, POST, PUT, PATCH, DELETE with shopping examples, safe and idempotent, status codes |
+| 4 | Topic4-FetchInAComponent.tsx | 9 | same "Employee leave requests" card twice, GET /api/leaves: (a) fetch in the render body = endless request loop (no cap, Stop rendering to stop), (b) fetch in useEffect = one request per click |
+| 5 | Topic5-WhatGetsHardAsAppGrows.tsx | 8 | five problems of fetching with useEffect (loading, error, caching and duplicates, freshness, race condition): problem left, hand-written fix right, no TanStack; motivates Topic 6 |
+| 6 | Topic6-IntroToTanStackQuery.tsx | 8 | what TanStack Query is and what it solves (maps to Topic 5 problems), client vs server state, install and QueryClientProvider setup, live useQuery + useMutation demo, hook table |
+| 7 | Topic7-ManualVsTanStack.tsx | 8 | the five Topic 5 problems again: hand-written fix left, useQuery right (loading, error with Retry, cache and duplicates, freshness, race condition) |
+| 8 | Topic8-CreateUpdateDelete.tsx | 14 | useMutation for POST/PATCH/DELETE, controlled form reused for Edit, requests table with Edit/Delete, invalidate in onSettled |
+| 9 | Topic9-OptimisticUpdates.tsx | 8 | onMutate snapshot, onError rollback, onSettled; forced PATCH failure |
+| 10 | Topic10-RouterBasics.tsx | 8 | Routes, Route, Link, NavLink, useNavigate, 404 route, MemoryRouter inside topics |
+| 11 | Topic11-NestedRoutesAndParams.tsx | 8 | layout route + Outlet, /leaves/:id, useParams (string to number), detail with 404 |
+| - | Task briefing | 3 | |
 Total: 90 min. Mock REST API: vite.config.ts plugin (in memory, resets on restart) + typed helpers in src/api/leaves.ts. QueryClientProvider is in src/main.tsx.
 Day 3 task: "My leaves" loaded from the API with loading, error and empty states, Cancel via useMutation, and a /leaves/:id detail page.
 ## Later days (expand when built)
@@ -55,6 +59,6 @@ Day 4: StateMap, PropDrilling, ContextAPI, Zustand, StoreAndServerState, ReduxTo
 Local UI: useState/useReducer (Day 2) | Server data: TanStack Query (Day 3) | URL: Router (Day 3) | Shared client: Zustand, Context for small values (Day 4) | Existing/large Redux apps: Redux Toolkit (comparison only).
 ## Final project (day4)
 Employee Leave Tracker in src/project/. "View as" Employee (Asha Rao) / Manager, no login. Pages: My leaves, Apply, Detail, Team requests (manager), Flagged (manager), 404.
-Annual 18 days, Sick 10, Casual 6, Unpaid unlimited; weekends excluded. Optimistic approve/reject/cancel with rollback.
+Annual 18 days, Sick 10, Casual 6, Flexi unlimited; weekends excluded. Optimistic approve/reject/cancel with rollback.
 ## Checklist
 [x] day1 built and committed [x] day2 built and committed [x] day3 built and committed [ ] day4 [ ] ESLint on day2 [ ] solution branches [ ] versions pinned, course tag

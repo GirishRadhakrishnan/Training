@@ -19,7 +19,7 @@ function mockLeaveApi(): Plugin {
   let leaves: LeaveRequest[] = structuredClone(sampleLeaves);
   let nextId = Math.max(...leaves.map((leave) => leave.id)) + 1;
   const statuses = ["Pending", "Approved", "Rejected", "Cancelled"];
-  const types = ["Annual", "Sick", "Casual", "Unpaid"];
+  const types = ["Annual", "Sick", "Casual", "Flexi"];
 
   return {
     name: "mock-leave-api",

@@ -1,4 +1,4 @@
-export type LeaveType = "Annual" | "Sick" | "Casual" | "Unpaid";
+export type LeaveType = "Annual" | "Sick" | "Casual" | "Flexi";
 
 export type LeaveStatus = "Pending" | "Approved" | "Rejected" | "Cancelled";
 
