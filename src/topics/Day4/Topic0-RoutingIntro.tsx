@@ -6,6 +6,7 @@
 //
 // What the slides cover:
 //   1. What is routing?
+//   2. Why do we need routing?
 //
 // The deck itself uses useState to remember the current slide number.
 
@@ -60,6 +61,18 @@ const slides: Slide[] = [
           </li>
         </ol>
       </>
+    ),
+  },
+  {
+    title: "Why do we need routing?",
+    body: (
+      <ul className={styles.points}>
+        <li>Navigating between screens.</li>
+        <li>Supporting browser back and forward buttons.</li>
+        <li>Allowing users to open a particular screen directly using its URL.</li>
+        <li>Maintaining the correct active navigation item.</li>
+        <li>Handling invalid URLs when a page does not exist.</li>
+      </ul>
     ),
   },
 ];
