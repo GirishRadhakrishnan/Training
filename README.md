@@ -66,3 +66,21 @@ Requires Node 22.22 or newer.
 Day 3 uses a mock REST API under `/api`, served in memory by the Vite dev server (`vite.config.ts`). Data resets when you restart `npm run dev`. Add `?delay=2000`, `?fail=1` or `?empty=1` to a request to simulate slow, failing or empty responses.
 
 **Day 3 task:** load "My leaves" from the API with loading, error and empty states, add Cancel with `useMutation` (optimistic update and rollback), and a New request form. No routing yet.
+
+## Day 4 topics
+
+1. Router basics
+2. Nested routes and params
+3. Authentication vs authorization
+4. Login flow
+5. Protected routes
+6. Role-based access
+7. Project tour
+
+Day 4 adds `/api/login`, `/api/me` and a secured `/api/leaves` to the mock API (`server/mockApi.ts`). Demo users (fake): Asha Rao, Employee, `asha@demo.test` / `asha123`; Rohan Mehta, Manager, `rohan@demo.test` / `rohan123`. The open Day 3 API is now `/api/demo/leaves`.
+
+**Day 4 task:** add a Manager-only "Team requests" page (`RequireRole`) with approve and reject, plus a 403 page, to your own My leaves app.
+
+## Sample project
+
+The full Employee Leave Tracker is in `src/project/` (see its README for the route map and exercises). Run `npm run dev` on the day4 branch and open <http://localhost:5173/project>. The topics stay at the root URL.

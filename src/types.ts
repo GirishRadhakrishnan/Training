@@ -13,3 +13,9 @@ export type LeaveRequest = {
 };
 
 export type NewLeave = Omit<LeaveRequest, "id" | "status">;
+
+export type Role = "Employee" | "Manager";
+
+export type User = { id: number; name: string; role: Role };
+
+export type LoginResponse = { token: string; user: User };

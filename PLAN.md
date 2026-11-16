@@ -51,9 +51,22 @@ Day 2 task: add debounced search, status and type filters (useReducer), working 
 | - | Task briefing | 3 | |
 Total: 90 min. Mock REST API: vite.config.ts plugin (in memory, resets on restart) + typed helpers in src/api/leaves.ts. QueryClientProvider is in src/main.tsx.
 Day 3 task: "My leaves" loaded from the API with loading, error and empty states, Cancel via useMutation with optimistic update and rollback, and a New request form. No routing yet (Day 4).
-## Later days (expand when built)
-Day 4: routing, authentication and authorization, then the sample project (src/project/).
+## Day 4 (90 min)
+| # | File | Min | Demonstrates |
+|---|------|-----|--------------|
+| - | Recap of Day 3 submissions | 5 | review trainee "My leaves" with optimistic cancel |
+| 1 | Topic1-RouterBasics.tsx | 12 | Routes, Route, Link, NavLink, useNavigate, 404 route, MemoryRouter inside topics |
+| 2 | Topic2-NestedRoutesAndParams.tsx | 14 | layout route + Outlet + index route, /leaves/:id, useParams (string to number), detail with loading, error, 404, useSearchParams filter that survives Back and refresh |
+| 3 | Topic3-AuthenticationVsAuthorization.tsx | 8 | 401 vs 403, client improves UX and server enforces, token storage trade-offs, live calls with no token, Employee and Manager |
+| 4 | Topic4-LoginFlow.tsx | 14 | controlled login form, useMutation to POST /api/login, AuthContext { user, status, login, logout }, session restore via /api/me, logout clears the Query cache, global 401 handler |
+| 5 | Topic5-ProtectedRoutes.tsx | 10 | RequireAuth layout route, "checking" state, Navigate replace with state.from, redirect back after login |
+| 6 | Topic6-RoleBasedAccess.tsx | 12 | RequireRole and the 403 page, can(user, action, leave) in src/lib/permissions.ts, hidden buttons, direct API call still 403 |
+| 7 | Topic7-ProjectTour.tsx | 8 | map of src/project/, where each kind of state lives, how routes, API and guards fit |
+| - | Task briefing | 7 | |
+Total: 90 min. The mock API (server/mockApi.ts, loaded by vite.config.ts) now has /api/login, /api/me and a secured /api/leaves. The open Day 3 API moved to /api/demo/leaves; src/api/leaves.ts picks the right one (token present = secured). Demo users: Asha Rao (Employee), Rohan Mehta (Manager); fake credentials shown on the login screens.
+Sample project: src/project/ (open /project; README inside has the route map and 5 exercises).
+Day 4 task: add a Manager-only "Team requests" page (RequireRole), with approve and reject, and a 403 page, to your own My leaves app.
 ## State decision
 Local UI: useState/useReducer (Day 2) | Server data: TanStack Query (Day 3) | URL: Router (Day 4) | Auth user: Context (Day 4). Redux Toolkit and Zustand are not part of this course.
 ## Checklist
-[x] day1 built and committed [x] day2 built and committed [x] day3 built and committed [ ] day4 [ ] ESLint on day2 [ ] solution branches [ ] versions pinned, course tag
+[x] day1 built and committed [x] day2 built and committed [x] day3 built and committed [x] day4 [ ] ESLint on day2 [ ] solution branches [ ] versions pinned, course tag
