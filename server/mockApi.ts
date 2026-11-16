@@ -118,10 +118,10 @@ export function mockApi(): Plugin {
     return demoUsers.find((u) => u.id === sessions.get(token));
   }
 
-  // Days a person has already used or reserved (Pending and Approved count)
-  const daysUsed = (name: string, type: LeaveType) =>
+  // Days a person has already used or reserved in one calendar year (Pending and Approved count)
+  const daysUsed = (name: string, type: LeaveType, year: string) =>
     leaves
-      .filter((l) => l.employee === name && l.type === type && (l.status === "Pending" || l.status === "Approved"))
+      .filter((l) => l.employee === name && l.type === type && l.startDate.startsWith(year) && (l.status === "Pending" || l.status === "Approved"))
       .reduce((sum, l) => sum + workingDays(l.startDate, l.endDate), 0);
 
   // Rules. Status codes: 401 not signed in, 403 signed in but not allowed, 404 not found
@@ -156,7 +156,7 @@ export function mockApi(): Plugin {
       const days = workingDays(startDate, endDate);
       if (days === 0) return send(400, { message: "Those dates have no working days" });
       const limit = ALLOWANCE[type as LeaveType];
-      const used = daysUsed(user.name, type as LeaveType);
+      const used = daysUsed(user.name, type as LeaveType, startDate.slice(0, 4));
       if (limit !== null && used + days > limit) {
         return send(400, { message: `Not enough ${type} leave: ${limit - used} days left, you asked for ${days}` });
       }

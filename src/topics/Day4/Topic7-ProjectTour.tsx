@@ -12,13 +12,13 @@ const FOLDERS: [string, string][] = [
   ["auth/AuthContext.tsx", "signed-in user, status, login, logout, session restore, global 401 handler"],
   ["auth/guards.tsx", "RequireAuth and RequireRole layout routes (UX only)"],
   ["api/leaves.ts", "TanStack Query hooks: useMyLeaves, useLeave, useChangeStatus (optimistic)"],
-  ["pages/", "Login, MyLeaves, ApplyLeave, LeaveDetail, TeamRequests, NotAllowed, NotFound"],
-  ["components/", "Layout, LeaveCard, TextField, Loading / LoadError / Empty"],
+  ["pages/", "Login, MyLeaves (the dashboard), LeaveDetail, TeamRequests, NotAllowed, NotFound"],
+  ["components/", "BalanceCard, ApplyForm, TrackerCard, HistoryCard, Layout, LeaveCard, TextField, Loading / LoadError / Empty"],
   ["project.css", "plain CSS, class names start with pj-"],
 ];
 
 const STATE: [string, string, string][] = [
-  ["Local UI (form fields, open/closed)", "useState / useReducer", "ApplyLeave form"],
+  ["Local UI (form fields, open/closed)", "useState / useReducer", "components/ApplyForm.tsx"],
   ["Server data (leaves)", "TanStack Query", "api/leaves.ts, never copied into state"],
   ["Which page, which filter", "the URL, via the router", "/leaves/3, ?status=Pending"],
   ["Who is signed in", "Context", "auth/AuthContext.tsx"],

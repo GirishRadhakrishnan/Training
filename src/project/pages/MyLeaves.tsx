@@ -1,68 +1,48 @@
-import { Link, useSearchParams } from "react-router";
-import { ALLOWANCE, LEAVE_STATUSES, LEAVE_TYPES, daysByStatus } from "../../lib/leave";
-import { can } from "../../lib/permissions";
-import { useAuth } from "../auth/AuthContext";
-import { useChangeStatus, useMyLeaves } from "../api/leaves";
-import LeaveCard from "../components/LeaveCard";
-import { Empty, LoadError, Loading } from "../components/Status";
+import { useRef, useState } from "react";
+import { ALLOWANCE, LEAVE_TYPES } from "../../lib/leave";
+import { useMyLeaves } from "../api/leaves";
+import ApplyForm from "../components/ApplyForm";
+import BalanceCard from "../components/BalanceCard";
+import HistoryCard from "../components/HistoryCard";
+import { LoadError, Loading } from "../components/Status";
+import TrackerCard from "../components/TrackerCard";
 
+// The Leaves dashboard. ONE query feeds every card. The balances, the tracker and the
+// table are all calculated from that list while rendering, so when a request is sent or
+// cancelled, one invalidation updates the whole screen.
 export default function MyLeaves() {
-  const { user } = useAuth();
   const leaves = useMyLeaves();
-  const cancel = useChangeStatus();
-
-  // The filter lives in the URL (?status=Pending), so refresh and shared links keep it.
-  const [params, setParams] = useSearchParams();
-  const status = LEAVE_STATUSES.find((s) => s === params.get("status")); // ignore junk values
-
-  if (leaves.isPending) return <Loading what="your leave requests" />;
-  if (leaves.isError) return <LoadError what="your leave requests" error={leaves.error} onRetry={() => leaves.refetch()} />;
-
-  const all = leaves.data;
-  const visible = status ? all.filter((leave) => leave.status === status) : all;
+  const [showPolicy, setShowPolicy] = useState(false);
+  const typeSelect = useRef<HTMLSelectElement>(null);
+  const year = String(new Date().getFullYear());
 
   return (
     <div>
-      <h1>My leaves</h1>
-
-      {/* Balances are CALCULATED from the list every render, never stored. */}
-      <div className="pj-balances">
-        {LEAVE_TYPES.map((type) => {
-          const approved = daysByStatus(all, type, "Approved");
-          const pending = daysByStatus(all, type, "Pending");
-          const limit = ALLOWANCE[type];
-          return (
-            <div className="card" key={type}>
-              <h3>{type}</h3>
-              <p>{limit === null ? `${approved} days taken (no limit)` : `${limit - approved - pending} of ${limit} days left`}</p>
-              <p className="muted">{approved} approved, {pending} pending</p>
-            </div>
-          );
-        })}
+      <div className="lv-header">
+        <h1>Leaves</h1>
+        <div className="row">
+          <span className="lv-range">01/01/{year} - 31/12/{year}</span>
+          <button type="button" aria-expanded={showPolicy} onClick={() => setShowPolicy(!showPolicy)}>View policy</button>
+          <button type="button" className="primary" onClick={() => typeSelect.current?.focus()}>Apply for leave</button>
+        </div>
       </div>
+      {showPolicy && (
+        <p className="message" role="note">
+          Yearly allowance: {LEAVE_TYPES.map((t) => `${t} ${ALLOWANCE[t] ?? "no limit"}`).join(", ")}. Weekends are not
+          counted. Pending and approved requests use up your balance; rejected and cancelled ones do not.
+        </p>
+      )}
 
-      <div className="row pj-toolbar">
-        <label>
-          Status{" "}
-          <select value={status ?? ""} onChange={(e) => setParams(e.target.value ? { status: e.target.value } : {})}>
-            <option value="">All</option>
-            {LEAVE_STATUSES.map((s) => <option key={s}>{s}</option>)}
-          </select>
-        </label>
-        <span className="muted">{visible.length} of {all.length} requests</span>
-        <Link to="/leaves/new" className="pj-button">Apply for leave</Link>
-      </div>
-
-      {all.length === 0 && <Empty>You have no leave requests yet. Apply for your first leave.</Empty>}
-      {all.length > 0 && visible.length === 0 && <Empty>You have no {status} requests.</Empty>}
-      {visible.map((leave) => (
-        <LeaveCard key={leave.id} leave={leave}>
-          {can(user, "cancel", leave) && (
-            <button className="danger" onClick={() => cancel.mutate({ id: leave.id, status: "Cancelled" })}>Cancel request</button>
-          )}
-        </LeaveCard>
-      ))}
-      {cancel.isError && <p className="message error" role="alert">Could not cancel the request, so it is Pending again: {cancel.error.message}</p>}
+      {leaves.isPending && <Loading what="your leave requests" />}
+      {leaves.isError && <LoadError what="your leave requests" error={leaves.error} onRetry={() => leaves.refetch()} />}
+      {leaves.data && (
+        <div className="lv-grid">
+          <BalanceCard leaves={leaves.data} year={year} />
+          <ApplyForm leaves={leaves.data} year={year} ref={typeSelect} />
+          <TrackerCard leaves={leaves.data} />
+          <HistoryCard leaves={leaves.data} />
+        </div>
+      )}
     </div>
   );
 }

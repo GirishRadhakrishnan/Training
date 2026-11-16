@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from "react-router";
 import { RequireAuth, RequireRole } from "./auth/guards";
 import Layout from "./components/Layout";
-import ApplyLeave from "./pages/ApplyLeave";
 import LeaveDetail from "./pages/LeaveDetail";
 import Login from "./pages/Login";
 import MyLeaves from "./pages/MyLeaves";
@@ -21,7 +20,6 @@ export default function AppRoutes() {
         <Route element={<Layout />}>
           <Route index element={<Navigate to="/leaves" replace />} />
           <Route path="leaves" element={<MyLeaves />} />
-          <Route path="leaves/new" element={<ApplyLeave />} />
           <Route path="leaves/:id" element={<LeaveDetail />} />
           <Route element={<RequireRole role="Manager" />}>
             <Route path="team" element={<TeamRequests />} />

@@ -17,8 +17,7 @@ export default function Layout() {
       <header className="pj-header">
         <strong>Leave tracker</strong>
         <nav className="row" aria-label="Main">
-          <NavLink to="/leaves" end className={linkClass}>My leaves</NavLink>
-          <NavLink to="/leaves/new" className={linkClass}>Apply for leave</NavLink>
+          <NavLink to="/leaves" className={linkClass}>My leaves</NavLink>
           {/* Hidden for Employees. The server would answer 403 anyway. */}
           {can(user, "viewTeam") && <NavLink to="/team" className={linkClass}>Team requests</NavLink>}
         </nav>
