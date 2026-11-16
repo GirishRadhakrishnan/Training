@@ -10,8 +10,8 @@ See `PLAN.md` for the schedule, `CLAUDE.md` for project rules and `GIT.md` for t
 |--------|---------|
 | day1 | React fundamentals (8 topics) |
 | day2 | day1 + state and hooks (10 topics, 18 in total) |
-| day3 | day2 + server state, CRUD, routing (11 topics) |
-| day4 | day3 + shared state (8 topics) + final project in `src/project/` |
+| day3 | day2 + server state and CRUD (9 topics) |
+| day4 | day3 + routing and auth (7 topics) + sample project in `src/project/` |
 
 ## Run
 
@@ -62,9 +62,7 @@ Requires Node 22.22 or newer.
 7. Loading, error and empty states
 8. Create, update and delete
 9. Optimistic updates
-10. Router basics
-11. Nested routes and params
 
 Day 3 uses a mock REST API under `/api`, served in memory by the Vite dev server (`vite.config.ts`). Data resets when you restart `npm run dev`. Add `?delay=2000`, `?fail=1` or `?empty=1` to a request to simulate slow, failing or empty responses.
 
-**Day 3 task:** load "My leaves" from the API with loading, error and empty states, add Cancel with `useMutation`, and a `/leaves/:id` detail page.
+**Day 3 task:** load "My leaves" from the API with loading, error and empty states, add Cancel with `useMutation` (optimistic update and rollback), and a New request form. No routing yet.

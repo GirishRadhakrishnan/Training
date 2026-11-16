@@ -193,7 +193,7 @@ export default function IntroToTanStackQuery() {
           </tr>
           <tr>
             <td>Tool</td>
-            <td>useState, useReducer (Day 4: Zustand)</td>
+            <td>useState, useReducer</td>
             <td>TanStack Query</td>
           </tr>
         </tbody>

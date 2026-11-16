@@ -33,8 +33,8 @@ function Counter() {
         </button>
         <button
           onClick={() => {
-            setCount((c) => c + 1);0, 1
-            setCount((c) => c + 1);1, 2
+            setCount((c) => c + 1);
+            setCount((c) => c + 1);
             setCount((c) => c + 1);
           }}
         >
