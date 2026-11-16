@@ -18,7 +18,38 @@
 }
 
 .pj-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin-left: auto;
+}
+
+.pj-user-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+
+.pj-user-name {
+  font-weight: 600;
+}
+
+.pj-user-role {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.pj-avatar {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .pj-link {
@@ -87,5 +118,13 @@
 }
 
 .lv-history td a {
+  color: inherit;
+}
+
+.pj-filters {
+  margin: 0 0 0.5rem;
+}
+
+.pj-leave h3 a {
   color: inherit;
 }

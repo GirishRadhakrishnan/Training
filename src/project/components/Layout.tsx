@@ -4,6 +4,10 @@ import { useAuth } from "../auth/AuthContext";
 import { can } from "../../lib/permissions";
 import { simulation } from "../api/leaves";
 
+// "Asha Rao" -> "AR"
+const initials = (name: string) =>
+  name.split(" ").filter(Boolean).slice(0, 2).map((word) => word[0].toUpperCase()).join("");
+
 // Shared frame for every signed-in page. <Outlet /> is where the current page appears.
 export default function Layout() {
   const { user, logout } = useAuth();
@@ -21,8 +25,13 @@ export default function Layout() {
           {/* Hidden for Employees. The server would answer 403 anyway. */}
           {can(user, "viewTeam") && <NavLink to="/team" className={linkClass}>Team requests</NavLink>}
         </nav>
-        <div className="row pj-user">
-          <span>{user?.name} <span className="badge">{user?.role}</span></span>
+        <div className="pj-user">
+          <div className="pj-user-text">
+            <span className="pj-user-name">{user?.name}</span>
+            <span className="pj-user-role">{user?.role}</span>
+          </div>
+          {/* Avatar: the initials of the name, decorative (the name is already next to it) */}
+          <span className="pj-avatar" aria-hidden="true">{initials(user?.name ?? "")}</span>
           <button onClick={logout}>Log out</button>
         </div>
       </header>

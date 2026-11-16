@@ -28,7 +28,7 @@ Paths are relative to `/project`.
 | `/` | Signed-in users | Redirects to `/leaves`. |
 | `/leaves` | Signed-in users | Leaves dashboard: balance per leave type, Apply for leave form (working-day preview, server validation messages), leave tracker, history table with year, type and status filters in the URL (`?status=Pending`) and a Cancel button. |
 | `/leaves/:id` | Signed-in users (Employees: own requests only) | One request. Cancel with an optimistic update and rollback. |
-| `/team` | Managers only | Team requests: approve and reject with optimistic updates. Employees see the 403 page. |
+| `/team` | Managers only | Team requests: filters for employee, type and status (in the URL), approve and reject with optimistic updates. Employees see the 403 page. |
 | anything else | Signed-in users | 404 page. |
 
 Not signed in? Every page except `/login` redirects to `/login`.
