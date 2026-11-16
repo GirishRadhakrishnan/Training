@@ -1,0 +1,83 @@
+.deck {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.counter {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.slide {
+  min-height: 24rem;
+  padding: 0.5rem 0 1rem;
+  font-size: 1.15rem;
+}
+
+.slide h2 {
+  font-size: 2rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.lead {
+  font-size: 1.4rem;
+  margin: 0 0 1.5rem;
+}
+
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  text-align: center;
+}
+
+.step h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.step p {
+  margin: 0.25rem 0 0;
+}
+
+.step code {
+  font-size: 1.1rem;
+}
+
+.arrow {
+  align-self: center;
+  font-size: 1.5rem;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .flow {
+    flex-direction: column;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}

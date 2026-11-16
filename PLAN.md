@@ -55,6 +55,7 @@ Day 3 task: "My leaves" loaded from the API with loading, error and empty states
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
 | - | Recap of Day 3 submissions | 5 | review trainee "My leaves" with optimistic cancel |
+| 0 | Topic0-RoutingIntro.tsx + .module.css | - | slide deck: what is routing (URL, matching route, screen) |
 | 1 | Topic1-RouterBasics.tsx | 12 | Routes, Route, Link, NavLink, useNavigate, 404 route, MemoryRouter inside topics |
 | 2 | Topic2-NestedRoutesAndParams.tsx | 14 | layout route + Outlet + index route, /leaves/:id, useParams (string to number), detail with loading, error, 404, useSearchParams filter that survives Back and refresh |
 | 3 | Topic3-AuthenticationVsAuthorization.tsx | 8 | 401 vs 403, client improves UX and server enforces, token storage trade-offs, live calls with no token, Employee and Manager |
