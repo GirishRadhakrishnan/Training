@@ -1,25 +1,28 @@
 // DAY 4 · TOPIC 7: Project tour
 //
-// A guided map of the sample Employee Leave Tracker in src/project/. Read it before you open
-// the code: you will see the same ideas from Days 1 to 4 in one small app.
-// Open the app at /project, sign in with a demo account, then read the files in this order:
-// routes.tsx, auth/, api/leaves.ts, pages/, components/. src/project/README.md has the route
-// map and five exercises.
+// A guided map of the Employee leave management Basic project. It is no longer part of this
+// training repo: it lives in its own folder next to it (C:\Users\241347\code\React\Employee Leave
+// management Basic). Read it before you open the code: you will see the same ideas from Days 1 to 4
+// in one small app. Run it with npm install and npm run dev, open http://localhost:5173, sign in with
+// a demo account, then read the files in this order: routes.tsx, auth/, api/, queries/leaves.ts,
+// pages/, components/. The project's README.md has the route map and five exercises.
 
 const FOLDERS: [string, string][] = [
-  ["ProjectApp.tsx", "QueryClientProvider, BrowserRouter (basename /project) and AuthProvider"],
+  ["main.tsx", "starts React and renders App"],
+  ["App.tsx", "QueryClientProvider, BrowserRouter and AuthProvider"],
   ["routes.tsx", "the whole route map: public /login, RequireAuth, Layout, RequireRole"],
   ["auth/AuthContext.tsx", "signed-in user, status, login, logout, session restore, global 401 handler"],
   ["auth/guards.tsx", "RequireAuth and RequireRole layout routes (UX only)"],
-  ["api/leaves.ts", "TanStack Query hooks: useMyLeaves, useLeave, useChangeStatus (optimistic)"],
+  ["api/", "fetch helpers only: http.ts (token, ApiError, request), auth.ts, leaves.ts"],
+  ["queries/leaves.ts", "TanStack Query hooks: useMyLeaves, useLeave, useChangeStatus (optimistic)"],
   ["pages/", "Login, MyLeaves (the dashboard), LeaveDetail, TeamRequests, NotAllowed, NotFound"],
-  ["components/", "BalanceCard, ApplyForm, TrackerCard, HistoryCard, Layout, LeaveCard, TextField, Loading / LoadError / Empty"],
-  ["project.css", "plain CSS, class names start with pj-"],
+  ["components/", "BalanceCard, ApplyForm, TrackerCard, HistoryCard, Layout, LeaveCard, TextField, Status (Loading / LoadError / Empty)"],
+  ["styles.css", "plain CSS: the global classes first, then the classes this app uses"],
 ];
 
 const STATE: [string, string, string][] = [
   ["Local UI (form fields, open/closed)", "useState / useReducer", "components/ApplyForm.tsx"],
-  ["Server data (leaves)", "TanStack Query", "api/leaves.ts, never copied into state"],
+  ["Server data (leaves)", "TanStack Query", "queries/leaves.ts, never copied into state"],
   ["Which page, which filter", "the URL, via the router", "/leaves/3, ?status=Pending"],
   ["Who is signed in", "Context", "auth/AuthContext.tsx"],
 ];
@@ -29,11 +32,12 @@ export default function ProjectTour() {
     <div>
       <h2>Project tour</h2>
       <p>
-        <a href="/project">Open the project</a> (use a new tab if you want to keep this page). Demo
+        The project runs on its own: open its folder, run <code>npm install</code> and{" "}
+        <code>npm run dev</code>, then open <code>http://localhost:5173</code> in a new tab. Demo
         accounts: asha@demo.test / asha123 (Employee) and rohan@demo.test / rohan123 (Manager). These are fake.
       </p>
 
-      <h3>Where things live (src/project/)</h3>
+      <h3>Where things live (the project's src/)</h3>
       <table>
         <tbody>
           {FOLDERS.map(([name, what]) => (
@@ -68,7 +72,7 @@ export default function ProjectTour() {
       </ol>
 
       <p className="try">
-        Try it: sign in as Asha and type /project/team in the address bar. Which part stops you:
+        Try it: in the project, sign in as Asha and type /team in the address bar. Which part stops you:
         the guard, the server, or both? Then find where each happens in the code.
       </p>
     </div>

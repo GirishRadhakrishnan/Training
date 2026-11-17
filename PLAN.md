@@ -1,6 +1,6 @@
 # PLAN.md
 ## Schedule (4 days x 90 min; ~70 min teaching, ~20 min practice; run back-to-back)
-Day 1 React fundamentals (day1, 8 topics) | Day 2 State and hooks (day2, 10) | Day 3 Server state and CRUD (day3, 9) | Day 4 Routing, auth + final project (day4, 7 + project)
+Day 1 React fundamentals (day1, 8 topics) | Day 2 State and hooks (day2, 10) | Day 3 Server state and CRUD (day3, 9) | Day 4 Routing and auth (day4, 7; the final project is a separate project)
 ## Day 1 (90 min)
 | # | File | Min | Demonstrates |
 |---|------|-----|--------------|
@@ -62,10 +62,10 @@ Day 3 task: "My leaves" loaded from the API with loading, error and empty states
 | 4 | Topic4-LoginFlow.tsx | 14 | controlled login form, useMutation to POST /api/login, AuthContext { user, status, login, logout }, session restore via /api/me, logout clears the Query cache, global 401 handler |
 | 5 | Topic5-ProtectedRoutes.tsx | 10 | RequireAuth layout route, "checking" state, Navigate replace with state.from, redirect back after login |
 | 6 | Topic6-RoleBasedAccess.tsx | 12 | RequireRole and the 403 page, can(user, action, leave) in src/lib/permissions.ts, hidden buttons, direct API call still 403 |
-| 7 | Topic7-ProjectTour.tsx | 8 | map of src/project/, where each kind of state lives, how routes, API and guards fit |
+| 7 | Topic7-ProjectTour.tsx | 8 | map of the separate Employee leave management Basic project, where each kind of state lives, how routes, API and guards fit |
 | - | Task briefing | 7 | |
 Total: 90 min. The mock API (server/mockApi.ts, loaded by vite.config.ts) now has /api/login, /api/me and a secured /api/leaves. The open Day 3 API moved to /api/demo/leaves; src/api/leaves.ts picks the right one (token present = secured). Demo users: Asha Rao (Employee), Rohan Mehta (Manager); fake credentials shown on the login screens.
-Sample project: src/project/ (open /project; README inside has the route map and 5 exercises).
+Final project: Employee leave management Basic, a separate project in its own folder (not on the training branches). Its README has the route map and 5 exercises.
 Day 4 task: add a Manager-only "Team requests" page (RequireRole), with approve and reject, and a 403 page, to your own My leaves app.
 ## State decision
 Local UI: useState/useReducer (Day 2) | Server data: TanStack Query (Day 3) | URL: Router (Day 4) | Auth user: Context (Day 4). Redux Toolkit and Zustand are not part of this course.

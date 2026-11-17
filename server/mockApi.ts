@@ -12,6 +12,7 @@ import type { LeaveRequest, LeaveType, User } from "../src/types";
 //   /api/login        POST {username, password} -> 200 {token, user} or 401 {message}
 //   /api/me           GET with "Authorization: Bearer <token>" -> the user, or 401
 //   /api/leaves       Day 4: secured. The SERVER enforces the rules (see secureLeaves).
+//   /api/reports      GET with an "x-api-key" header -> a count, 401 (no key) or 403 (wrong key)
 //
 // Simulate real conditions on any request: ?delay=2000 (default 600 ms), ?fail=1 (500),
 // ?empty=1 (GET list returns []).
@@ -22,6 +23,9 @@ const demoUsers: DemoUser[] = [
   { id: 1, name: "Asha Rao", role: "Employee", username: "asha@demo.test", password: "asha123" },
   { id: 2, name: "Rohan Mehta", role: "Manager", username: "rohan@demo.test", password: "rohan123" },
 ];
+
+// FAKE demo API key for GET /api/reports. Real keys are secrets kept on a server, never in React code.
+const DEMO_API_KEY = "demo-key-123";
 
 // Tokens are random strings kept in server memory: token -> user id.
 // Real apps use SIGNED tokens (for example JWT) and send them in httpOnly cookies, so
@@ -216,6 +220,15 @@ export function mockApi(): Plugin {
         }
         if (route === "demo" && parts[1] === "leaves") return demoApi(parts, method, url, body, send);
         if (route === "login" && method === "POST") return login(body, send);
+
+        // API key demo: a key identifies an APPLICATION (not a person). Sent as an "x-api-key" header.
+        // Missing key = 401 (who are you?), wrong key = 403 (known format, but not allowed).
+        if (route === "reports" && method === "GET") {
+          const key = req.headers["x-api-key"];
+          if (!key) return send(401, { message: "Missing API key: send it in the x-api-key header" });
+          if (key !== DEMO_API_KEY) return send(403, { message: "This API key is not valid" });
+          return send(200, { message: "Key accepted", pendingRequests: leaves.filter((l) => l.status === "Pending").length });
+        }
 
         // Everything below needs a valid token
         const user = currentUser(req);

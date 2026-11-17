@@ -11,7 +11,7 @@ See `PLAN.md` for the schedule, `CLAUDE.md` for project rules and `GIT.md` for t
 | day1 | React fundamentals (8 topics) |
 | day2 | day1 + state and hooks (10 topics, 18 in total) |
 | day3 | day2 + server state and CRUD (9 topics) |
-| day4 | day3 + routing and auth (7 topics) + sample project in `src/project/` |
+| day4 | day3 + routing and auth (7 topics) |
 
 ## Run
 
@@ -81,6 +81,6 @@ Day 4 adds `/api/login`, `/api/me` and a secured `/api/leaves` to the mock API (
 
 **Day 4 task:** add a Manager-only "Team requests" page (`RequireRole`) with approve and reject, plus a 403 page, to your own My leaves app.
 
-## Sample project
+## Final project
 
-The full Employee Leave Tracker is in `src/project/` (see its README for the route map and exercises). Run `npm run dev` on the day4 branch and open <http://localhost:5173/project>. The topics stay at the root URL.
+The Employee leave management Basic project is separate from this repo, in its own folder with its own README (route map and exercises). Run `npm install` and `npm run dev` there, then open <http://localhost:5173>.

@@ -8,7 +8,8 @@
 // shared link shows the same filtered list, which useState could never do.
 // The detail page loads its own data with useQuery, keyed by the id. It handles loading,
 // not found (a 404 ApiError), other errors with Retry, and a Back link that keeps the filter.
-// MemoryRouter, so the training app's URL hash (#Day4/Topic2-...) is not touched.
+// MemoryRouter, so the training app's URL hash (#Day4/Topic2-...) is not touched. The
+// "In-memory URL" line above the nav shows the current path, so you can watch it change.
 
 import { Link, MemoryRouter, NavLink, Outlet, Route, Routes, useLocation, useParams, useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
@@ -17,8 +18,13 @@ import { LEAVE_STATUSES, formatRange, workingDays } from "../../lib/leave";
 import type { LeaveStatus } from "../../types";
 
 function Layout() {
+  const { pathname, search } = useLocation();
   return (
     <div>
+      {/* shows the path growing as you go deeper: / then /leaves then /leaves/3 */}
+      <p className="muted">
+        In-memory URL: <code>{pathname}{search}</code>
+      </p>
       <nav className="row" aria-label="Demo">
         <NavLink to="/" end>Home</NavLink>
         <NavLink to="/leaves">My leaves</NavLink>
@@ -121,10 +127,6 @@ export default function NestedRoutesAndParams() {
           </Routes>
         </MemoryRouter>
       </div>
-      <p className="try">
-        Try it: choose the Pending filter, open a request, then use Back: is the filter still
-        there? Then use Number(id) as a plain string in the queryKey and see what changes.
-      </p>
     </div>
   );
 }

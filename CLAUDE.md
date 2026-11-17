@@ -6,7 +6,7 @@ Project memory. Also read PLAN.md (what to build) and GIT.md (branches).
 React 19.2.7+, TypeScript strict, Vite 7+, Node 22.22+. Added on later days: TanStack Query v5 (Day 3), React Router v8 (Day 4).
 Plain CSS only. Not used on purpose: Tailwind, UI libraries, testing, Zod, Redux Toolkit, Zustand.
 ## Branches
-day1 -> day2 -> day3 -> day4, cumulative. day4 also has the full app in src/project/. Never put later-day code on an earlier branch.
+day1 -> day2 -> day3 -> day4, cumulative. The final project (Employee leave management Basic) is a separate project outside this repo. Never put later-day code on an earlier branch.
 ## Commands
 npm install (after every branch switch) | npm run dev | npm run build (tsc --noEmit && vite build; must pass on every branch)
 ## Layout
@@ -29,9 +29,9 @@ Balances, counts and working days are calculated, never stored. TypeScript stric
 npm run build passes; change rebased onto later branches; topic follows the rules; PLAN.md updated; no node_modules/dist/secrets committed.
 ## Day 3 additions (server state and CRUD, 9 topics)
 Mock REST API is a Vite plugin in vite.config.ts (in memory, /api/leaves, ?delay ?fail ?empty); fetch helpers in src/api/leaves.ts check response.ok and throw ApiError. QueryClientProvider is in src/main.tsx (retry: false).
-## Day 4 additions (routing, auth, sample project)
+## Day 4 additions (routing, auth)
 Mock API is server/mockApi.ts (loaded by vite.config.ts): /api/demo/leaves (open, Day 3), /api/login, /api/me, secured /api/leaves. Demo users are fake. src/api/http.ts holds the token, ApiError(status) and the global 401 handler.
-Topic demos use MemoryRouter, never BrowserRouter: TopicBrowser owns the URL hash. The project (src/project/) uses BrowserRouter with basename "/project".
+Topic demos use MemoryRouter, never BrowserRouter: TopicBrowser owns the URL hash. The final project lives outside this repo and is not part of these rules.
 Topics 4-6 each contain a small local auth provider so each file stays self-contained.
 ## Known gaps
 ESLint is added on day2. Dependencies use caret ranges; pin exact versions after the first full successful build.

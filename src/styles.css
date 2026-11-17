@@ -151,6 +151,40 @@ pre {
   margin: 0.15rem 0;
 }
 
+/* Layer diagram: boxes in a column with a down arrow between them (Day 4 topic 3) */
+.arch {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.arch li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #eaf0fd;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.arch li + li {
+  margin-top: 0.9rem;
+  position: relative;
+}
+
+.arch li + li::before {
+  content: "↓";
+  position: absolute;
+  top: -0.95rem;
+  line-height: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
