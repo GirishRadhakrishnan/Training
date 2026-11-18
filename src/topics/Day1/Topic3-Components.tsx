@@ -58,7 +58,15 @@ export default function Components() {
       <h2>Components</h2>
       <div className="demo">
         <LeaveList />
-      </div> 
+      </div>
+      <p className="note">
+        The three 3 cards are identical because LeaveCard cannot receive data. We
+        need props so each card can show a different leave request.
+      </p>
+      <p className="try">
+        Try it: rename LeaveCard to leaveCard and look at the error. Why does
+        React need the capital letter?
+      </p>
     </div>
   );
 }
