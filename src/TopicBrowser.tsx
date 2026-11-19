@@ -47,11 +47,7 @@ function readHash(): string {
   return decodeURIComponent(window.location.hash.replace(/^#/, ""));
 }
 
-type TopicBrowserProps = {
-  projectHref?: string;
-};
-
-export default function TopicBrowser({ projectHref }: TopicBrowserProps) {
+export default function TopicBrowser() {
   const [hash, setHash] = useState(readHash);
 
   useEffect(() => {
@@ -70,7 +66,7 @@ export default function TopicBrowser({ projectHref }: TopicBrowserProps) {
   return (
     <div className="shell">
       <nav className="sidebar" aria-label="Topics">
-        <h1>React leave training</h1>
+        <h1>React training</h1>
         {days.map((day) => (
           <section key={day}>
             <h2>Day {day}</h2>
@@ -91,14 +87,6 @@ export default function TopicBrowser({ projectHref }: TopicBrowserProps) {
               })}
           </section>
         ))}
-        {projectHref && (
-          <section>
-            <h2>Project</h2>
-            <a className="topic-link" href={projectHref}>
-              Final project
-            </a>
-          </section>
-        )}
       </nav>
       <main className="content">
         <p className="file-label">{selected.path}</p>

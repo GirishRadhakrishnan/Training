@@ -9,9 +9,9 @@ See `PLAN.md` for the schedule, `CLAUDE.md` for project rules and `GIT.md` for t
 | Branch | Content |
 |--------|---------|
 | day1 | React fundamentals (8 topics) |
-| day2 | day1 + state and hooks (10 topics) |
-| day3 | day2 + server state, CRUD, routing (7 topics) |
-| day4 | day3 + shared state (8 topics) + final project in `src/project/` |
+| day2 | day1 + state and hooks (10 topics, 18 in total) |
+| day3 | day2 + server state and CRUD (9 topics) |
+| day4 | day3 + routing and auth (7 topics) |
 
 ## Run
 
@@ -35,3 +35,52 @@ Requires Node 22.22 or newer.
 8. Styling
 
 **Day 1 task:** build a static "My leaves" page from `src/sample/leaves.ts` with status badges, a Cancel button on pending items only, and Pending and History sections.
+
+## Day 2 topics
+
+1. Props vs state
+2. useState
+3. Controlled forms
+4. Lifting state up
+5. Rules of hooks
+6. useEffect
+7. useRef
+8. useReducer
+9. Custom hooks
+10. Class components (awareness)
+
+**Day 2 task:** add debounced search, status and type filters (useReducer), working days per request, and a "No requests match" empty state to the My leaves page.
+
+## Day 3 topics
+
+1. Recap: state and hooks
+2. Client, server, API and database
+3. APIs and HTTP methods
+4. Calling an API with fetch
+5. Why TanStack Query
+6. useQuery
+7. Loading, error and empty states
+8. Create, update and delete
+9. Optimistic updates
+
+Day 3 uses a mock REST API under `/api`, served in memory by the Vite dev server (`vite.config.ts`). Data resets when you restart `npm run dev`. Add `?delay=2000`, `?fail=1` or `?empty=1` to a request to simulate slow, failing or empty responses.
+
+**Day 3 task:** load "My leaves" from the API with loading, error and empty states, add Cancel with `useMutation` (optimistic update and rollback), and a New request form. No routing yet.
+
+## Day 4 topics
+
+1. Router basics
+2. Nested routes and params
+3. Authentication vs authorization
+4. Login flow
+5. Protected routes
+6. Role-based access
+7. Project tour
+
+Day 4 adds `/api/login`, `/api/me` and a secured `/api/leaves` to the mock API (`server/mockApi.ts`). Demo users (fake): Asha Rao, Employee, `asha@demo.test` / `asha123`; Rohan Mehta, Manager, `rohan@demo.test` / `rohan123`. The open Day 3 API is now `/api/demo/leaves`.
+
+**Day 4 task:** add a Manager-only "Team requests" page (`RequireRole`) with approve and reject, plus a 403 page, to your own My leaves app.
+
+## Final project
+
+The Employee leave management Basic project is separate from this repo, in its own folder with its own README (route map and exercises). Run `npm install` and `npm run dev` there, then open <http://localhost:5173>.

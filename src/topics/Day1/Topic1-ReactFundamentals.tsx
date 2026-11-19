@@ -39,10 +39,7 @@ export default function ReactFundamentals() {
         <PendingCount employee="Ravi Menon" />
         <PendingCount employee="Meera Iyer" />
       </div>
-      <p className="try">
-        Try it: add a fourth PendingCount with employee="Nobody" and see what it
-        shows. Which part of the component tree did you add?
-      </p>
+      
     </div>
   );
 }
