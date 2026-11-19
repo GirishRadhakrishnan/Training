@@ -40,7 +40,7 @@ export const sampleLeaves: LeaveRequest[] = [
   {
     id: 5,
     employee: "Ravi Menon",
-    type: "Unpaid",
+    type: "Flexi",
     startDate: "2026-10-26",
     endDate: "2026-10-30",
     reason: "Extended trip to attend a course",
